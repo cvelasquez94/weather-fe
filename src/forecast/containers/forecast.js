@@ -6,12 +6,12 @@ class Forecast extends Component {
     return (
       <div>
         {
-          this.props.forecastOfWeek ? 
+          this.props.forecastOfWeek && 
            <div  className="forecast">{
                this.props.forecastOfWeek.list.map((item) => {
-                   return <WeatherView {...item} />
+                   return <WeatherView {...item} key={item.dt}/>
                })
-            }</div>: <h1>test</h1>
+            }</div>
         }
       </div>
     )
