@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import WeatherView from '../../weather/components/weather';
+import './forecast.css'
 class Forecast extends Component {
   render() {
     return (

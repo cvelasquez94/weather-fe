@@ -56,12 +56,6 @@ module.exports = (env) => {
           })
         },
         {
-          test: /\.scss$/,                    // made scss
-            use: extractPlugin.extract({
-              use: ['css-loader', 'sass-loader']
-            })
-        },
-        {
           test: /\.(jpg|png|gif|svg)$/,
           use: {
             loader: 'url-loader',

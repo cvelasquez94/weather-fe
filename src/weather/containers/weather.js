@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import WeatherView from '../components/weather';
-import Forecast from '../../forecast/containers/forecast';
+import '../components/weather.css';
+import API from '../../../utils/api';
+import CONSTANT from '../../api.json';
 
 class Weather extends Component {
+     changecity = async (e) => {
+        const weatherCurrent = await API.getWeatherCurrent(e.target.value);
+        this.props.dispatch({
+            type: 'GET_WEATHER_CURRENT',
+            payload: {
+                weatherCurrent
+            }
+        })   
+    }
     render() {
         const { weatherCurrent } = this.props;
         return (
@@ -11,7 +22,13 @@ class Weather extends Component {
                 {weatherCurrent &&
                     <WeatherView {...weatherCurrent}/>
                 }
-                <Forecast />                
+                <select onChange={this.changecity}>
+                  {
+                    CONSTANT.map(item => {
+                        return <option key={item.id} value={item.name}>{item.name}({item.country})</option>
+                    })
+                  }
+                </select>
             </div>
         )
     }

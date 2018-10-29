@@ -1,5 +1,8 @@
 .Weather {
     margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .city {
@@ -9,11 +12,16 @@
     margin: 0 0 20px 0;
     letter-spacing: 2px;
     font-weight: bold;
+    font-size: 21px;
 }
 
 .descriptions {
     color: #888b8e;
     font-weight: 300;
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
+}
+
+.weather-container {
+    margin-left: 30px;
 }
